@@ -1,7 +1,5 @@
 # Machine-Learning-Regression-and-Classification-
 
-# Machine Learning Tasks
-
 This project involves two main machine learning tasks: CPU Temperature Regression and Colour Words Classification.
 
 ## CPU Temperature Regression
