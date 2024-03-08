@@ -1,0 +1,12 @@
+1. Looking at your dog-rates.ipynb, do you think the residual are close-enough to being normal to look at the OLS p-value? Can you reasonably conclude that the ratings are increasing?
+
+The residuals from the regression model in dog-rates.ipynb are reasonably close to a normal distribution. This is suggested by the histogram of residuals, which seems to be centered around zero. A normally distributed residuals plot indicates that the model’s predictions are, on average, correct.
+The p-value from the Ordinary Least Squares (OLS) regression is extremely small (3.793798773107596e-121), much less than the commonly used significance level of 0.05. This suggests that the likelihood of the observed correlation between the variables occurring by chance is extremely low. Therefore, it's safe to reject the null hypothesis that the slope of the line is zero. Furthermore, given that the slope is positive (2.298303175224457e-08), this indicates an increasing relationship: as the independent variable increases, the dependent variable also increases. This suggests that the ratings are increasing
+
+
+2.Do you think that the new “better” prediction is letting the Kalman filter do a better job capturing the true signal in the noise?
+
+Calculating a histogram focused around the residuals of my kalman filtered next_temp values, it appears that the residuals are centered around zero and follow a roughly normal distribution. This is generally a good sign, as it suggests that on average, the Kalman filter’s predictions are accurate. Furthermore,looking at the plot of the valid data and comparing it with the trained data, it seems that the Kalman filter is doing a reasonable job of capturing the underlying signal in the presence of noise. The green line, which represents the Kalman smoothed values, appears to follow the overall trend of the blue dots, which represent the actual data points.
+However, it’s important to note that the model’s validation score (0.47878405084638986) is lower than the training score (0.552037743885651). This could suggest that the model might be overfitting to the training data, as it is not performing as well on unseen (valid) data. 
+
+So in the end, because of the overfitting, I don't think it's clear for us to make the assumption that the new “better” prediction is letting the Kalman filter do a better job capturing the true signal in the noise.
